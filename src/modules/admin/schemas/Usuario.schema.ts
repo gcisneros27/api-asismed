@@ -2,12 +2,12 @@ import * as Joi from "joi";
 import { IUsuario } from "../../../interfaces/IUsuario";
 
 export const usuarioSchemaNew = Joi.object({
-    _cliente: Joi.string().required(),
+    // _cliente: Joi.string().required(),
     _codigo_cliente: Joi.string().required(),
     tipo_di: Joi.string().valid("CI", "RIF", "DNI"),
     documento_identidad: Joi.string().required(),
     username: Joi.string().required(),
-    password: Joi.string().email().required(),
+    password: Joi.string().required(),
     datos_personales:{
         primer_nombre: Joi.string().required(),
         segundo_nombre: Joi.string().optional(),

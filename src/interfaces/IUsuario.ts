@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { codigoTipoDI } from "../types/tipo_di.enum";
+import { codigoTipoDI } from "../types/tipoDocumentoIdentidad.enum";
 export interface IUsuario {
   _id?: Types.ObjectId;
   _cliente: Types.ObjectId;

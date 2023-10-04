@@ -3,6 +3,6 @@ export interface IResponse {
   success: boolean;
   httpStatusCode: number;
   appStatusCode: number;
-  messages: Array<string>;
+  messages: string | Array<string>;
   data: any;
 } 

@@ -26,7 +26,7 @@ export const newPermiso = async (req: Request, res: Response) => {
     console.log(permisoCreado);
     response.Created(res, "Permiso Creado", 201, permisoCreado);
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,"Ocurrio un error", error);
   }
 };
 
@@ -39,7 +39,7 @@ export const updatepermiso = async (req: Request, res: Response) => {
     console.log(permiso);
     response.Ok(res, "Permiso Actualizado", 200, permiso);
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,"Ocurrio un error", error);
   }
 };
 
@@ -54,6 +54,6 @@ export const deletepermiso = async (req: Request, res: Response) => {
     if (permiso) return response.Eliminado(res, "permiso eliminado");
     return response.NotFound(res, "No se encontro el permiso");
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,"Ocurrio un error", error);
   }
 };

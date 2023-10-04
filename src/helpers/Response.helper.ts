@@ -83,11 +83,11 @@ class CustomResponse {
     }
   }
 
-  Error(res: Response, error: any) {
+  Error(res: Response,message:string|Array<string> , error: any) {
     try {
       this.response.success = false;
       this.response.httpStatusCode = 500;
-      this.response.messages = ["Ocurrio un error"];
+      this.response.messages = message
       this.response.appStatusCode = AppServerErrors.errorInterno;
       this.response.data = error;
       res.status(this.response.httpStatusCode).json(this.response);

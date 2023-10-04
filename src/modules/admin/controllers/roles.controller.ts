@@ -21,12 +21,13 @@ export const getRolById = async (req: Request, res: Response) => {
 export const newRol = async (req: Request, res: Response) => {
   try {
     const newrol: IRol = req.body;
+    newrol.codigo=uuidv4()
     const rol = new Rol(newrol);
     const rolCreado = await rol.save();
     console.log(rolCreado);
     response.Created(res, "Rol Creado", 201, rolCreado);
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,'Ocurrio un error' ,error);
   }
 };
 
@@ -39,7 +40,7 @@ export const updateRol = async (req: Request, res: Response) => {
     console.log(rol);
     response.Ok(res, "Rol Actualizado", 200, rol);
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,'Ocurrio un error' ,error);
   }
 };
 
@@ -54,6 +55,6 @@ export const deleteRol = async (req: Request, res: Response) => {
     if (rol) return response.Eliminado(res, "Rol eliminado");
     return response.NotFound(res, "No se encontro el rol");
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,'Ocurrio un error' ,error);
   }
 };

@@ -20,13 +20,14 @@ export const getClienteById = async (req: Request, res: Response) => {
 export const newCliente = async (req: Request, res: Response) => {
   try {
     const newCliente: ICliente = req.body;
+
     const cliente = new Cliente(newCliente);
     cliente.codigo = uuidv4();
     const clienteCreado = await cliente.save();
     console.log(clienteCreado);
     response.Created(res, "Cliente Creado", 201, clienteCreado);
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,"Ocurrio un error", error);
   }
 };
 
@@ -38,7 +39,7 @@ export const updateCliente = async (req: Request, res: Response) => {
     console.log(body);
     response.Ok(res, "Cliente Actualizado", 200, cliente);
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,"Ocurrio un error", error);
   }
 };
 
@@ -53,6 +54,6 @@ export const deleteCliente = async (req: Request, res: Response) => {
     if (cliente) return response.Eliminado(res, "Cliente eliminado");
     return response.NotFound(res, "No se encontro el Cliente");
   } catch (error) {
-    response.Error(res, error);
+    response.Error(res,"Ocurrio un error", error);
   }
 };
