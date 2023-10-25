@@ -1,5 +1,6 @@
 export interface IResponseService {
-    success: boolean,
-    message: string,
-    data:any
+    success: boolean;
+    code?: number;
+    message: string;
+    data:any;
 }

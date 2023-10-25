@@ -52,7 +52,7 @@ export const deleteRol = async (req: Request, res: Response) => {
       { activo: false },
       { new: true }
     );
-    if (rol) return response.Eliminado(res, "Rol eliminado");
+    if (rol) return response.Deteled(res, "Rol eliminado");
     return response.NotFound(res, "No se encontro el rol");
   } catch (error) {
     response.Error(res,'Ocurrio un error' ,error);

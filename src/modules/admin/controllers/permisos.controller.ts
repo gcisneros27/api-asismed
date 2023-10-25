@@ -51,7 +51,7 @@ export const deletepermiso = async (req: Request, res: Response) => {
       { activo: false },
       { new: true }
     );
-    if (permiso) return response.Eliminado(res, "permiso eliminado");
+    if (permiso) return response.Deteled(res, "permiso eliminado");
     return response.NotFound(res, "No se encontro el permiso");
   } catch (error) {
     response.Error(res,"Ocurrio un error", error);

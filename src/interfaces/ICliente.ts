@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
-export interface ICliente {
-  _id: Types.ObjectId;
+export interface ICliente  {
+  id:string | undefined;
   codigo: string;
   nombre: string;
   tipo_cliente:string
@@ -8,5 +8,8 @@ export interface ICliente {
   numero_documento_identidad:string
   pais:string
   email:string
-  activo:boolean
+  _activo:boolean
+  _transaction:string;
+  _created:Date | undefined;
+  _updated:Date | undefined;
 }

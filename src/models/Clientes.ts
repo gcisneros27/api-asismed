@@ -9,7 +9,10 @@ const clienteSchema = new Schema<ICliente>({
     numero_documento_identidad: { type: String, required: true },
     pais: { type: String, required: true },
     email: { type: String, required: true },
-    activo:{ type: Boolean, required: true,default:true},
+    _activo:{ type: Boolean, required: true,default:true},
+    _transaction: { type: String, required: true },
+    _created:{ type: Date, required: true,default:new Date()},
+    _updated:{ type: Date, required: true,default:new Date()},
   });
 
   export const Cliente = model<ICliente>('Cliente', clienteSchema);
